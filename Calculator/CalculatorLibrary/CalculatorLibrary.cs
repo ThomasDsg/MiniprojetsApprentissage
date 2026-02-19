@@ -30,19 +30,19 @@ using System.Formats.Tar;
              // Use a switch statement to do the math.
              switch (op)
              {
-                 case "a":
+                 case "+":
                      result = num1 + num2;
                     writer.WriteValue("Add");
                      break;
-                 case "s":
+                 case "-":
                      result = num1 - num2;
                     writer.WriteValue("Substract");
                     break;
-                 case "m":
+                 case "*":
                      result = num1 * num2;
                     writer.WriteValue("Multiply");
                     break;
-                 case "d":
+                 case "/":
                      // Ask the user to enter a non-zero divisor.
                      if (num2 != 0)
                      {

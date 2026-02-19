@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\draka\\Desktop\\Dev\\MiniprojetsApprentissage\\Calculator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B45FEC7D-9F83-4048-9D7D-BEC758C650B8}|CalculatorLibrary\\CalculatorLibrary.csproj|c:\\users\\draka\\desktop\\dev\\miniprojetsapprentissage\\calculator\\calculatorlibrary\\calculatorlibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B45FEC7D-9F83-4048-9D7D-BEC758C650B8}|CalculatorLibrary\\CalculatorLibrary.csproj|solutionrelative:calculatorlibrary\\calculatorlibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{054F7CB1-05A9-D89F-46D4-3FD428208C29}|Calculator\\Calculator.csproj|c:\\users\\draka\\desktop\\dev\\miniprojetsapprentissage\\calculator\\calculator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{054F7CB1-05A9-D89F-46D4-3FD428208C29}|Calculator\\Calculator.csproj|solutionrelative:calculator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B45FEC7D-9F83-4048-9D7D-BEC758C650B8}|CalculatorLibrary\\CalculatorLibrary.csproj|c:\\users\\draka\\desktop\\dev\\miniprojetsapprentissage\\calculator\\calculatorlibrary\\calculatorlibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B45FEC7D-9F83-4048-9D7D-BEC758C650B8}|CalculatorLibrary\\CalculatorLibrary.csproj|solutionrelative:calculatorlibrary\\calculatorlibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,33 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\draka\\Desktop\\Dev\\MiniprojetsApprentissage\\Calculator\\Calculator\\Program.cs",
               "RelativeDocumentMoniker": "Calculator\\Program.cs",
               "ToolTip": "C:\\Users\\draka\\Desktop\\Dev\\MiniprojetsApprentissage\\Calculator\\Calculator\\Program.cs",
               "RelativeToolTip": "Calculator\\Program.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAgwD4AAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAAAgwGQAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-09T15:41:25.389Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CalculatorLibrary.cs",
               "DocumentMoniker": "C:\\Users\\draka\\Desktop\\Dev\\MiniprojetsApprentissage\\Calculator\\CalculatorLibrary\\CalculatorLibrary.cs",
               "RelativeDocumentMoniker": "CalculatorLibrary\\CalculatorLibrary.cs",
               "ToolTip": "C:\\Users\\draka\\Desktop\\Dev\\MiniprojetsApprentissage\\Calculator\\CalculatorLibrary\\CalculatorLibrary.cs",
               "RelativeToolTip": "CalculatorLibrary\\CalculatorLibrary.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCIAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCwAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T15:40:24.255Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T15:40:24.255Z"
             }
           ]
         }
