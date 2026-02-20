@@ -43,12 +43,13 @@ using System.Formats.Tar;
                     writer.WriteValue("Multiply");
                     break;
                  case "/":
-                     // Ask the user to enter a non-zero divisor.
-                     if (num2 != 0)
-                     {
-                         result = num1 / num2;
+                    // Ask the user to enter a non-zero divisor.
+                    if (num2 != 0)
+                    {
+                        result = num1 / num2;
                         writer.WriteValue("Divide");
                     }
+                    else writer.WriteValue("Divided0");
                      break;
                  // Return text for an incorrect option entry.
                  default:

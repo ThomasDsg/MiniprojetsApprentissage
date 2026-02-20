@@ -3,93 +3,67 @@ using CalculatorLibrary;
 
 class Program
 {
+    static (string, string, bool) getInput()
+    {
+        string? numInput = "";
+      
+        string? inputKey = Convert.ToString(Console.ReadKey(true).KeyChar);
+
+        while (inputKey != "+" && inputKey != "-" && inputKey != "*" && inputKey != "/" && inputKey != "\r")
+        {
+            if (double.TryParse(inputKey, out double cleanNum1))
+            {
+                numInput = numInput + inputKey;
+                Console.Write(inputKey);
+            }
+            else if (inputKey == "\b")
+            {
+                numInput = numInput.Remove(numInput.Length - 1);
+                Console.Write("\b \b");
+            }
+            else if (inputKey == "\e") {
+                return ("", "", true);
+            }
+            inputKey = Convert.ToString(Console.ReadKey(true).KeyChar);
+        }
+        return (numInput, inputKey, false);
+    }
     static void Main(string[] args)
     {
         bool endApp = false;
         // Display title as the C# console calculator app.
         Console.WriteLine("Console Calculator in C#\r");
+       // Console.WriteLine("Press ESCAPE to close the app\r");
         Console.WriteLine("------------------------\n");
         Calculator calculator = new Calculator();
 
+        double finalNum1 = 0;
+        double finalNum2 = 0;
+        string? op = "";
+        string? op2 = "";
+
         while (!endApp)
         {
-            // Declare variables and set to empty.
-            // Use Nullable types (with ?) to match type of System.Console.ReadLine
-            string? numInput1 = "";
-            string? numInput2 = "";
-            string? op = "+";
             double result = 0;
-            double finalNum1 = 0;
-            double finalNum2 = 0;
-
-            // Ask the user to type the first number.
-            //Console.Write("Type a number, and then press Enter: ");
-            //numInput1 = Console.ReadLine();
-            string? input1 = Convert.ToString(Console.ReadKey(true).KeyChar);
-            double cleanNum1 = 0;
-
-            while (input1 != "+" && input1 != "-" && input1 != "*" && input1 != "/" && input1 != "\r")
+            if(op == "\r" | op == "")
             {
-                if(double.TryParse(input1, out cleanNum1))
-                {
-                    numInput1 = numInput1 + input1;
-                    cleanNum1 = 0;
-                    Console.Write(input1);
-                }
-                else if (input1 == "\b"){
-                    numInput1 = numInput1.Remove(numInput1.Length - 1);
-                    Console.Write("\b \b");
-                }
-                input1 = Convert.ToString(Console.ReadKey(true).KeyChar);
+                var getInputResult = getInput(); 
+                if (getInputResult.Item3) break;
+                op = getInputResult.Item2;
+                if (getInputResult.Item1 != "") finalNum1 = Convert.ToDouble(getInputResult.Item1);
             }
-            if (input1 != "\r")
+
+            if (op != "\r")
             {
-                op = input1;
+                Console.Write(" {0} ", op);
+                var getInputResult = getInput();
+                if (getInputResult.Item3) break;
+                if (getInputResult.Item1 != "") finalNum2 = Convert.ToDouble(getInputResult.Item1);
+                op2 = getInputResult.Item2;
             }
-            Console.Write(" {0} ", op);
-
-
-            /*while (!double.TryParse(numInput1, out cleanNum1))
-            {
-                Console.Write("This is not valid input. Please enter a numeric value: ");
-                numInput1 = Console.ReadLine();
-            }*/
-
-            // Ask the user to type the second number.
-            //Console.Write("Type another number, and then press Enter: ");
-            //numInput2 = Console.ReadLine();
-            string? input2 = Convert.ToString(Console.ReadKey(true).KeyChar);
-            double cleanNum2 = 0;
-
-            while (input2 != "+" && input2 != "-" && input2 != "*" && input2 != "/" && input2 != "\r")
-            {
-                if (double.TryParse(input2, out cleanNum2))
-                {
-                    numInput2 = numInput2 + Convert.ToString(input2);
-                    cleanNum2 = 0;
-                    Console.Write(input2);
-                }
-                else if (input2 == "\b")
-                {
-                    numInput2 = numInput2.Remove(numInput2.Length - 1);
-                    Console.Write("\b \b");
-                }
-                input2 = Convert.ToString(Console.ReadKey(true).KeyChar);
-
-            }
-            /*while (!double.TryParse(numInput2, out cleanNum2))
-            {
-                Console.Write("This is not valid input. Please enter a numeric value: ");
-                numInput2 = Console.ReadLine();
-            }*/
-
-            // Validate input is not null, and matches the pattern
-
+            else op = "+";
             try
             {
-                finalNum1 = Convert.ToDouble(numInput1);
-                finalNum2 = Convert.ToDouble(numInput2);
-
                 result = calculator.DoOperation(finalNum1, finalNum2, op);
                 if (double.IsNaN(result))
                 {
@@ -98,22 +72,23 @@ class Program
                 else
                 {
                     //Console.Write(new String(' ', Console.BufferWidth));
-                    Console.WriteLine("\n{0:0.##}\n", result);
+                    Console.Write("\n= {0:0.##}\n", result);
+                    finalNum1 = result;
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine("Oh no! An exception occurred trying to do the math.\n - Details: " + e.Message);
             }
-            
-            Console.WriteLine("------------------------\n");
+            if (op2 != "\r")
+            {
+                op = op2;
+            }
+            else op = "";
 
-            // Wait for the user to respond before closing.
-            Console.Write("Press 'n' and Enter to close the app, or press any other key and Enter to continue: ");
-            if (Console.ReadLine() == "n") endApp = true;
-
-            Console.WriteLine("\n"); // Friendly linespacing.
+            //if (Console.ReadKey(true).Key == ConsoleKey.Escape) endApp = true;
         }
+        Console.WriteLine("\n"); // Friendly linespacing.
         calculator.Finish();
         return;
     }
